@@ -23,6 +23,8 @@ Route::get('vistatres', 'App\Http\Controllers\micontrolador@vista3');
 Route::get('registrarlibro', 'App\Http\Controllers\micontrolador@registralibro')->name('registrarlibro');
 Route::post('guardarlibro', 'App\Http\Controllers\micontrolador@guardarlibro')->name('guardarlibro');
 
+Route::get('consultalibros', 'App\Http\Controllers\micontrolador@consultalibros')->name('consultalibros');
+Route::get('eliminar/{id}', 'App\Http\Controllers\micontrolador@eliminarLibro')->name('eliminarlibro');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();

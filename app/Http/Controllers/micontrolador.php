@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\libro;
+use App\Models\Libro;
 
 class micontrolador extends Controller
 {
@@ -30,5 +30,15 @@ class micontrolador extends Controller
         $libros->save();
 
         return redirect()->route('registrarlibro');
+    }
+    public function consultalibros(){
+        $libros = Libro::all();
+        return view('consulta', compact('libros'));
+    }
+
+    public function eliminarLibro($id){
+        $libro=Libro::find($id);
+        $libro->delete();
+        return redirect()->route('consultalibros');
     }
 }

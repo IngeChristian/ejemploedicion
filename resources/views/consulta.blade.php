@@ -39,6 +39,9 @@
                                 <td>
                                 <a href="{{route('eliminarlibro',$libro->id)}}" class="btn btn-danger">Borrar</a>
                                 </td>
+                                <td>
+                                <a href="{{route('muestralibro',$libro->id)}}" class="btn btn-warning">Editar</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

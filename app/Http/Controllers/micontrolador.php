@@ -41,4 +41,20 @@ class micontrolador extends Controller
         $libro->delete();
         return redirect()->route('consultalibros');
     }
+    public function muestralibro($id){
+        $libros=Libro::find($id);
+        return view('muestralibro', compact('libros'));
+    }
+    
+    public function editalibro(Request $request, $id){
+        $libros=Libro::find($id);
+        
+        $libros->nombre=$request->input('nombre');
+        $libros->genero=$request->input('genero');
+        $libros->editorial=$request->input('editorial');
+        $libros->save();
+        return redirect()->route('consultalibros');
+    }
+    
+    
 }
